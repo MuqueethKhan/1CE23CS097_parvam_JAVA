@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My first basic Website</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+ 
+    .hero {
+      background: linear-gradient(135deg, rgba(13,110,253,0.08), rgba(102,16,242,0.06));
+      padding: 4rem 0;
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      transition: transform 200ms ease;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+  </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">NOICE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <button class="btn btn-primary ms-lg-3" id="ctaTop">Get Started</button>
+    </div>
+  </div>
+</nav>
+
+
+<header class="hero" id="home">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold">Javascript projects</h1>
+        <p class="lead text-muted">Includes a responsive navbar, cards, a pricing section, a contact form, and a little JavaScript to make it interactive.</p>
+        <div class="d-flex gap-2">
+          <a class="btn btn-primary btn-lg" href="#contact">Contact Us</a>
+          <button class="btn btn-outline-secondary btn-lg" id="learnMoreBtn">Learn more</button>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center mt-4 mt-lg-0">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.mqfiiBIn-JF8FQVWF6XBTwHaD4?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="illustration" class="img-fluid rounded shadow-sm">
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="py-5" id="features">
+  <div class="container">
+    <h2 class="mb-4">Features</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-3 card-hover h-100">
+          <div class="card-body">
+            <h5 class="card-title">Responsive</h5>
+            <p class="card-text">Looks great on mobile, tablet, and desktop thanks to Bootstrap's grid and utilities.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 card-hover h-100">
+          <div class="card-body">
+            <h5 class="card-title">Easy to customize</h5>
+            <p class="card-text">Modify styles, swap components, and add your own JavaScript quickly.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 card-hover h-100">
+          <div class="card-body">
+            <h5 class="card-title">Tiny JS helpers</h5>
+            <p class="card-text">Simple scripts included below for interactivity like showing modals and validating forms.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5 bg-light" id="pricing">
+  <div class="container">
+    <h2 class="mb-4">Pricing</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <h5 class="card-title">Free</h5>
+            <p class="display-6 fw-bold">Free plan(₹0)</p>
+            <p class="text-muted">Basic features to get started & understand the c</p>
+            <ul class="list-unstyled">
+              <li>1 project</li>
+              <li>Email support</li>
+            </ul>
+            <button class="btn btn-outline-primary" onclick="selectPlan('Free')">Choose</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 text-center border-primary">
+          <div class="card-body">
+            <h5 class="card-title">Pro</h5>
+            <p class="display-6 fw-bold">₹999 / mo</p>
+            <p class="text-muted">For freelancers & small teams</p>
+            <ul class="list-unstyled">
+              <li>5 projects</li>
+              <li>Priority support</li>
+            </ul>
+            <button class="btn btn-primary" onclick="selectPlan('Pro')">Choose</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <h5 class="card-title">Business</h5>
+            <p class="display-6 fw-bold">₹7999 / mo</p>
+            <p class="text-muted">For teams and agencies</p>
+            <ul class="list-unstyled">
+              <li>Unlimited projects</li>
+              <li>Phone support</li>
+            </ul>
+            <button class="btn btn-outline-primary" onclick="selectPlan('Business')">Choose</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5" id="contact">
+  <div class="container">
+    <h2 class="mb-4">Contact Us</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <form id="contactForm" novalidate>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" required>
+            <div class="invalid-feedback">Please enter your name.</div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
+            <div class="invalid-feedback">Please enter a valid email.</div>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="4" required></textarea>
+            <div class="invalid-feedback">Please enter a message.</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Send message</button>
+        </form>
+      </div>
+      <div class="col-md-6 d-flex align-items-center">
+        <div class="w-100 text-center">
+          <h5>Office</h5>
+          <p class="text-muted">123 Demo Street<br>City, Country</p>
+          <button class="btn btn-outline-secondary" id="openMap">Open map (demo)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="py-4 bg-white border-top">
+  <div class="container d-flex justify-content-between align-items-center">
+    <small class="text-muted">&copy; <span id="year"></span> MySite</small>
+    <div>
+      <a href="#" class="text-muted me-3">Privacy</a>
+      <a href="#" class="text-muted">Terms</a>
+    </div>
+  </div>
+</footer>
+
+
+<div class="modal fade" id="planModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Plan Selected</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p id="planText">You chose a plan.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Proceed</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+
+  document.getElementById('ctaTop').addEventListener('click', function(){
+    document.getElementById('pricing').scrollIntoView({behavior: 'smooth'});
+  });
+
+ 
+  document.getElementById('learnMoreBtn').addEventListener('click', function(){
+    alert('This is a demo site built with Bootstrap and JavaScript.');
+  });
+
+
+  function selectPlan(planName){
+    const planText = document.getElementById('planText');
+    planText.textContent = `You selected the "${planName}" plan.`;
+    const planModal = new bootstrap.Modal(document.getElementById('planModal'));
+    planModal.show();
+  }
+
+
+  (function(){
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!form.checkValidity()){
+        form.classList.add('was-validated');
+        return;
+      }
+      
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send message';
+        form.reset();
+        form.classList.remove('was-validated');
+        alert('Thanks! Your message has been sent (demo).');
+      }, 900);
+    });
+  })();
+
+  
+  document.getElementById('openMap').addEventListener('click', function(){
+    window.open('https://www.google.com/maps', '_blank');
+  });
+
+  
+  document.querySelectorAll('.nav-link').forEach(function(link){
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      const targetId = this.getAttribute('href').slice(1);
+      const el = document.getElementById(targetId);
+      if(el) el.scrollIntoView({behavior: 'smooth'});
+    });
+  });
+</script>
+</body>
+</html>

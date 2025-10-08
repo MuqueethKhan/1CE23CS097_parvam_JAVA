@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testing</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.5;
+    }
+
+    /* ====== TOGGLE SWITCH STYLING ====== */
+    .switch {
+      width: 100px;
+      height: 50px;
+      border-radius: 25px;
+      background-color: #ccc;
+      border: 3px solid #000;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .switch span {
+      font-weight: bold;
+      z-index: 1;
+      color: #000;
+    }
+
+    .circle {
+      position: absolute;
+      left: 7px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #555;
+      transition: all 0.3s ease;
+    }
+
+    .switch.on {
+      background-color: #bdf5c5;
+    }
+
+    .switch.on .circle {
+      background-color: #2ecc71;
+      transform: translateX(50px);
+    }
+
+    /* ====== BULB IMAGE ====== */
+    #bulb_img {
+      display: block;
+      margin-top: 10px;
+      width: 120px;
+      height: 120px;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>1. We can change HTML content</h3>
+  <p id="demo">This is existing content</p>
+  <button onclick="document.getElementById('demo').innerText='JS will Change HTML Content'">Click Me</button>
+
+  <h3>2. We can change the Attr HTML (with a toggle switch)</h3>
+  <img src="./off.png" alt="image" id="bulb_img">
+
+  <!-- Toggle Switch -->
+  <div class="switch" id="toggleSwitch">
+    <span id="switchText">OFF</span>
+    <div class="circle"></div>
+  </div>
+
+  <h3>3. We can change the CSS Style</h3>
+  <p id="demo2">Noice</p>
+  <button type="button" onclick="document.getElementById('demo2').style.color='green'">Click Me</button>
+
+  <h3>4. We can hide the HTML code</h3>
+  <p id="demo3">Hide me bruh.</p>
+  <button type="button" onclick="document.getElementById('demo3').style.display='none'">Click Me</button>
+
+  <h3>5. We can show the HTML code</h3>
+  <p id="demo4" style="display: none;">I was hidden</p>
+  <button type="button" onclick="document.getElementById('demo4').style.display='block'">Click Me</button>
+
+  <script>
+    const toggleSwitch = document.getElementById('toggleSwitch');
+    const bulbImg = document.getElementById('bulb_img');
+    const switchText = document.getElementById('switchText');
+    let isOn = false;
+
+    toggleSwitch.addEventListener('click', () => {
+      isOn = !isOn;
+      toggleSwitch.classList.toggle('on', isOn);
+      bulbImg.src = isOn ? './on.jpeg' : './off.png';
+      switchText.textContent = isOn ? 'ON' : 'OFF';
+    });
+  </script>
+</body>
+
+</html>
